@@ -25,7 +25,8 @@ for i in range(len(json_datab)):
 
 for i in range(len(json_datam)):
     try:
-        geo_tag_listm.append(json_datam[i]['geocode'])
+        if json_datam[i]['geocode']['lng'] != 0:
+            geo_tag_listm.append(json_datam[i]['geocode'])
     except:
         pass
 
