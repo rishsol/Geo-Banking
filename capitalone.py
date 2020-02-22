@@ -1,6 +1,7 @@
 import requests
 import json
 from pprint import pprint
+import csv
 
 addressList = []
 addressStringList = []
@@ -29,6 +30,3 @@ for i in range(len(json_datam)):
             geo_tag_listm.append(json_datam[i]['geocode'])
     except:
         pass
-
-
-pprint(geo_tag_listm)
