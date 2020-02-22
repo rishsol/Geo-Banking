@@ -1,4 +1,3 @@
-name: hack2020
 channels:
   - defaults
 dependencies:
