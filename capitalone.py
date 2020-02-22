@@ -2,6 +2,7 @@ import requests
 import json
 from pprint import pprint
 import geopandas
+import csv
 
 addressList = []
 addressStringList = []
@@ -31,5 +32,7 @@ for i in range(len(json_datam)):
     except:
         pass
 
-
-pprint(geo_tag_listm)
+with open("Merchants_Data.csv", 'w', newline = "") as fout:
+    dict_writer = csv.DictWriter(fout, fieldnames=geo_tag_listm[0].keys())
+    dict_writer.writeheader()
+    dict_writer.writerows(geo_tag_listm)
